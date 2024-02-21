@@ -1,3 +1,11 @@
-.card-item{
+.card {
+    background-color: aquamarine;
+}
+
+.btn {
     margin-left: 20px;
+}
+
+.email {
+    margin-left: 40px;
 }
