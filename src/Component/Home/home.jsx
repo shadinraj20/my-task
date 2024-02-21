@@ -9,7 +9,7 @@ import React, { useState, useEffect } from 'react';
 
 const Home = () => {
     const[data, setData]=useState();
-    console.log(data);
+    
     
     useEffect(()=>{
         fetch('https://dummyjson.com/users')
