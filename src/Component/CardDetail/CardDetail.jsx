@@ -6,6 +6,7 @@ const CardDetail = () => {
    
   const[data , setData]=useState();
   console.log(data);
+ 
     
    
     
@@ -14,16 +15,19 @@ useEffect(()=>{
         .then(res =>res.json())
         .then(data=>setData(data))
         
-    },[])
+    },[prams.id])
+    if(!data){return null}
   return (
     <div className='container CardDetail mt-5'>
        <div class="row row-cols-1 row-cols-md-3 g-4">
   <div class="col">
     <div class="card">
-      <img src= "" class="card-img-top" alt="..."/>
+      <img src= {data.image} class="card-img-top" alt=''/>
       <div class="card-body">
-        <h5 class="card-title"></h5>
-        <p class="card-text"></p>
+        <h5 class="card-title">Name:{data.firstName} {data.middleName} {data.lastName}</h5>
+        <p class="card-text">Email:{data.email}</p>
+        
+
       </div>
     </div>
   </div>
