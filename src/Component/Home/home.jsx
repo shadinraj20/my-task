@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import './home.css';
 import React, { useState, useEffect } from 'react';
 
@@ -9,6 +10,7 @@ import React, { useState, useEffect } from 'react';
 
 const Home = () => {
     const[data, setData]=useState();
+    
    
     
     
@@ -30,16 +32,13 @@ const Home = () => {
                         <div className="card">
                             <div className='card-body'>
                                 <img src={user.image} width={80} height={80} alt='Avatar'/>
-                                <button type="button" class="btn btn-outline-primary">
+                                <Link to={'/user/' + user.id}>
                                     <h5>{user.firstName} {user.middleName} {user.lastName}</h5>
-                                    </button> 
-                                <p className='email'>Email:{user.email}</p>
-                                <h2>{user.handleAddUser}</h2>
-                                
-                                
-                                
+                                    </Link> 
+                                <h6 className='email'>Email:{user.email}</h6>
+                                 
 
-                            </div>
+                        </div>
                         </div>
                     </div>
                 )
