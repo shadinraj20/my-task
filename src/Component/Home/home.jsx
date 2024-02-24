@@ -10,6 +10,7 @@ import React, { useState, useEffect } from 'react';
 
 const Home = () => {
     const[data, setData]=useState();
+    const[record, setRecord]=useState(data);
     
    
     
@@ -17,15 +18,17 @@ const Home = () => {
     useEffect(()=>{
         fetch('https://dummyjson.com/users')
         .then(res =>res.json())
-        .then(data=>setData(data))
+        .then(data=>
+            {setData(data)
+             setRecord(data)})
         
     },[])
     
-
+    
     return (
         <section className='container mt-5 '>
             <div className="row row-cols-1 row-cols-md-3 g-4">
-            {data?.users.map(user=> {
+            {record?.users.map(user=> {
                 return  (
                     
                     <div className="col" key={user.id}>
@@ -37,7 +40,8 @@ const Home = () => {
                                     </Link> 
                                 <h6 className='email'>Email:{user.email}</h6>
                                 
-                                 
+                               
+       
 
                         </div>
                         </div>
