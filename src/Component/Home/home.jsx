@@ -39,7 +39,7 @@ const Home = () => {
                                     <h5>{user.firstName} {user.middleName} {user.lastName}</h5>
                                     </Link> 
                                 <h6 className='email'>Email:{user.email}</h6>
-                                
+                                <p class="card-text">Company:{user.company.address.address}</p>
                                
        
 
